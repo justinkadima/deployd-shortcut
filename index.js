@@ -14,13 +14,13 @@ module.exports=function(options){
     var env = process.env.NODE_ENV || options.ENV ||'development';
    
   
-    var staticdir=path.join(__dirname, 'public');
+    var staticdir= 'public';
     
     var mongohost=options.MONGO_HOST|| 'localhost';
     var mongoport=options.MONGO_PORT || '27017';
     var mongodb=options.MONGO_DB || 'depdb';
     var templateengine=options.TEMPLATE_ENGINE || '';
-    var templatedir=path.join(__dirname,options.TEMPLATE_DIR || 'templates');
+    var templatedir=options.TEMPLATE_DIR || 'templates';
 
 
 
