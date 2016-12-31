@@ -1,0 +1,32 @@
+{
+  "name": "deployd-shortcut",
+  "version": "1.0.0",
+  "description": "f",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justinkadima/deployd-shortcut.git"
+  },
+  "keywords": [
+    "deployd",
+    "express",
+    "nodejs"
+  ],
+  "author": "Justin Kadima <justinkadima@gmail.com> (http://github.com/justinkadima)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/justinkadima/deployd-shortcut/issues"
+  },
+  "homepage": "https://github.com/justinkadima/deployd-shortcut#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "colors": "^1.1.2",
+    "cookie-parser": "^1.4.3",
+    "deployd": "^0.8.9",
+    "express": "^4.14.0",
+    "nunjucks": "^3.0.0"
+  }
+}
