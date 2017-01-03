@@ -7,12 +7,14 @@ npm install --save deployd-shortcut
 ```
 # usage
 ``` javascript
+//dont forget to process.chdir(__dirname) if you run it using a daemon
 var app=require('deployd-shortcut')({
     PORT:8990,
-    ENV:'development',
+    ENV:'production',
     MONGO_HOST:'localhost',
     MONGO_PORT:27017,
     MONGO_DB:'mydb',
+    MONGO_CREDENTIALS:{username:'user',password:'yourpassword'}
     TEMPLATE_ENGINE:'nunjucks',
     TEMPLATE_DIR:'mytemplates'
 });
@@ -34,7 +36,8 @@ the default values are:
 - ENV:'development' ( the valid values are: 'development' or 'production')
 - MONGO_HOST: 'localhost'
 - MONGO_PORT: 27017
-- MONGO_DB: 'depdb'  
+- MONGO_DB: 'depdb'
+- MONGO_CREDENTIALS: (Only active when in production ENV)
 - TEMPLATE_DIR: 'templates'
 - TEMPLATE_ENGINE:  '' ( no template engine is set by default. the valid values are the names of the template engines that the expressjs library allready has builtin support for like: 'pug', 'ejs'.Beside those the package has also support for 'nunjucks' template engine which is actually the recommanded one(beware that the 'nunjucks' templates require a .html file extension)
 
