@@ -11,16 +11,21 @@ module.exports=function(options){
 
 
     var port = process.env.PORT || options.PORT || 8989;
-    var env = process.env.NODE_ENV || options.ENV ||'development';
+    var env = process.env.NODE_ENV || options.ENV || 'development';
    
   
-    var staticdir= 'public';
+    var staticdir = 'public';
     
-    var mongohost=options.MONGO_HOST|| 'localhost';
-    var mongoport=options.MONGO_PORT || '27017';
-    var mongodb=options.MONGO_DB || 'depdb';
-    var templateengine=options.TEMPLATE_ENGINE || '';
-    var templatedir=options.TEMPLATE_DIR || 'templates';
+    var dboptions = {};
+    dboptions.host = options.MONGO_HOST|| 'localhost';
+    dboptions.port = options.MONGO_PORT || '27017';
+    dboptions.name = options.MONGO_DB || 'depdb';
+    if(env === 'production'){
+        dboptions.credentials = options.MONGO_CREDENTIALS;   
+    }
+    
+    var templateengine = options.TEMPLATE_ENGINE || '';
+    var templatedir = options.TEMPLATE_DIR || 'templates';
 
 
 
@@ -56,7 +61,7 @@ module.exports=function(options){
 
     deployd.attach(server,{
         env: env,
-        db:{host:mongohost,port:mongoport,name:mongodb}
+        db:dboptions
     });
 
    
