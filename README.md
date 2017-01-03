@@ -14,7 +14,7 @@ var app=require('deployd-shortcut')({
     MONGO_HOST:'localhost',
     MONGO_PORT:27017,
     MONGO_DB:'mydb',
-    MONGO_CREDENTIALS:{username:'user',password:'yourpassword'}
+    MONGO_CREDENTIALS:{username:'user',password:'yourpassword'},
     TEMPLATE_ENGINE:'nunjucks',
     TEMPLATE_DIR:'mytemplates'
 });
